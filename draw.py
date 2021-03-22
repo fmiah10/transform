@@ -9,10 +9,10 @@ def draw_lines( matrix, screen, color ):
 
     point = 0
     while point < len(matrix) - 1:
-        draw_line( matrix[point][0],
-                   matrix[point][1],
-                   matrix[point+1][0],
-                   matrix[point+1][1],
+        draw_line( int(matrix[point][0]),
+                   int(matrix[point][1]),
+                   int(matrix[point+1][0]),
+                   int(matrix[point+1][1]),
                    screen, color)
         point+= 2
 

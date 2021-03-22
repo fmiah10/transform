@@ -12,9 +12,9 @@ import math
 def make_translate( x, y, z ):
     t = new_matrix()
     ident(t)
-    t[0][3] = x
-    t[1][3] = y
-    t[2][3] = z
+    t[3][0] = x
+    t[3][1] = y
+    t[3][2] = z
     return t
 
 def make_scale( x, y, z ):
@@ -30,8 +30,8 @@ def make_rotX( theta ):
     ident(rX)
     theta = theta * (math.pi/ 180)
     rX[1][1] = math.cos(theta)
-    rX[1][2] = -math.sin(theta)
-    rX[2][1] = math.sin(theta)
+    rX[2][1] = -math.sin(theta)
+    rX[1][2] = math.sin(theta)
     rX[2][2] = math.cos(theta)
     return rX
 
@@ -40,8 +40,8 @@ def make_rotY( theta ):
     ident(rY)
     theta = theta * (math.pi / 180)
     rY[0][0] = math.cos(theta)
-    rY[0][2] = math.sin(theta)
-    rY[2][0] = -math.sin(theta)
+    rY[2][0] = math.sin(theta)
+    rY[0][2] = -math.sin(theta)
     rY[2][2] = math.cos(theta)
     return rY
 
@@ -50,8 +50,8 @@ def make_rotZ( theta ):
     ident(rZ)
     theta = theta * (math.pi/ 180)
     rZ[0][0] = math.cos(theta)
-    rZ[0][1] = -math.sin(theta)
-    rZ[1][0] = math.sin(theta)
+    rZ[1][0] = -math.sin(theta)
+    rZ[0][1] = math.sin(theta)
     rZ[1][1] = math.cos(theta)
     return rZ
 

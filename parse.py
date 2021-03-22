@@ -54,7 +54,6 @@ def parse_file( fname, points, transform, screen, color ):
             factors = (lines[i+1]).split(' ')
             for j in range(len(factors)):
                 factors[j] = int(factors[j].strip())
-            print(factors)
             s = make_scale(factors[0], factors[1], factors[2])
             matrix_mult(s, transform)
         #make transformation matrix into translate matrix and then translates the points
